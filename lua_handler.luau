@@ -12,6 +12,10 @@ local wsUrl = "ws://" .. host .. ":1306"
 local output_filter_list = {
     "cant place here!",
     "Closed Card",
+    "retry",
+    "Normal",
+    "Normal mode",
+    "GAME HAS ENDED!, SHOW POP UP GUI!",
     -- Add more strings to filter here
     -- "Another message to ignore", 
 }
