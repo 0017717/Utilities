@@ -2,6 +2,11 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+_G.AlreadyLoaded = true
+if _G.AlreadyLoaded == true then
+    print('Already loaded.')
+end
+
 local HttpService = game.HttpService -- Not using GetService and using HttpService.JSONEncode(HttpService, ...) to call to prevent issue with getrawmetatable
 local ws = WebSocket and WebSocket.connect or websocket and websocket.connect
 
