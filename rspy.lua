@@ -267,7 +267,7 @@ local logs = {}
 local selected = nil
 --- The blacklist (can be a string name or the Remote Instance)
 local blacklist = {
-    ["PhysicReplication"] = true,
+    "PhysicReplication" = true,
 }
 --- The block list (can be a string name or the Remote Instance)
 local blocklist = {}
