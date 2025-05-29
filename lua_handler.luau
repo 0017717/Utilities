@@ -17,6 +17,7 @@ local output_filter_list = {
     "Normal",
     "Normal mode",
     "GAME HAS ENDED!, SHOW POP UP GUI!",
+    "Dugeon Island is not a valid member of Folder "Workspace.Island""
     -- Add more strings to filter here
     -- "Another message to ignore", 
 }
