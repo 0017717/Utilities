@@ -4406,6 +4406,7 @@ CMDs[#CMDs + 1] = {NAME = 'oldconsole', DESC = 'Loads old Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'v2dex / vdex', DESC = 'Opens Dex++'}
 CMDs[#CMDs + 1] = {NAME = 'vscode / vs', DESC = 'Opens VScode'}
 CMDs[#CMDs + 1] = {NAME = 'cobalt', DESC = 'Opens Cobalt Remote Spy'}
+CMDs[#CMDs + 1] = {NAME = 'utopia', DESC = 'Opens Utopia Remote Spy'}
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'olddex / odex', DESC = 'Opens Old DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'remotespy / rspy', DESC = 'Opens Simple Spy V3'}
@@ -10297,6 +10298,10 @@ end)
 
 addcmd("cobalt", {}, function(args, speaker)
     loadstring(game:HttpGet("https://github.com/notpoiu/cobalt/releases/latest/download/Cobalt.luau"))()
+end)
+
+addcmd("utopia", {}, function(args, speaker)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Klinac/scripts/main/utopia_spy.lua", true))()
 end)
 
 addcmd("vscode", {"vs"}, function(args, speaker)
