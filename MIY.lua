@@ -4409,6 +4409,7 @@ CMDs[#CMDs + 1] = {NAME = 'cobalt', DESC = 'Opens Cobalt Remote Spy'}
 CMDs[#CMDs + 1] = {NAME = 'utopia', DESC = 'Opens Utopia Remote Spy'}
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'olddex / odex', DESC = 'Opens Old DEX by Moon'}
+CMDs[#CMDs + 1] = {NAME = 'v2dex / dexv2', DESC = 'Opens DEX++'}
 CMDs[#CMDs + 1] = {NAME = 'remotespy / rspy', DESC = 'Opens Simple Spy V3'}
 CMDs[#CMDs + 1] = {NAME = 'audiologger / alogger', DESC = 'Opens Edges audio logger'}
 CMDs[#CMDs + 1] = {NAME = 'serverinfo / info', DESC = 'Gives you info about the server'}
@@ -10311,6 +10312,10 @@ end)
 addcmd("explorer", {"dex"}, function(args, speaker)
     notify("Loading", "Hold on a sec")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+end)
+
+addcmd("v2dex", {"dexv2"}, function(args, speaker)
+    loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))()
 end)
 
 addcmd('olddex', {'odex'}, function(args, speaker)
