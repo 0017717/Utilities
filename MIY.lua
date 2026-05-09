@@ -4594,6 +4594,7 @@ CMDs[#CMDs + 1] = {NAME = 'noproximitypromptlimits / nopplimits', DESC = 'Sets a
 CMDs[#CMDs + 1] = {NAME = 'fireproximityprompts / firepp [name]', DESC = 'Uses all proximity prompts in a game or uses the optional name'}
 CMDs[#CMDs + 1] = {NAME = 'instantproximityprompts / instantpp', DESC = 'Disable the cooldown for proximity prompts'}
 CMDs[#CMDs + 1] = {NAME = 'uninstantproximityprompts / uninstantpp', DESC = 'Undo the cooldown removal'}
+CMDs[#CMDs + 1] = {NAME = 'instantproximitypromptsv2 / instappv2', DESC = 'Universal proximity prompts cooldown removal'}
 CMDs[#CMDs + 1] = {NAME = 'tpunanchored / tpua [player]', DESC = 'Teleports unanchored parts to a player'}
 CMDs[#CMDs + 1] = {NAME = 'animsunanchored / freezeua', DESC = 'Freezes unanchored parts'}
 CMDs[#CMDs + 1] = {NAME = 'thawunanchored / thawua / unfreezeua', DESC = 'Thaws unanchored parts'}
@@ -10856,11 +10857,32 @@ addcmd('instantproximityprompts',{'instantpp'},function(args, speaker)
 	end
 end)
 
-addcmd('uninstantproximityprompts',{'uninstantpp'},function(args, speaker)
-	if PromptButtonHoldBegan ~= nil then
-		PromptButtonHoldBegan:Disconnect()
-		PromptButtonHoldBegan = nil
-	end
+local PromptButtonHoldBeganV2 = nil
+addcmd('instantproximitypromptsv2', {'instappv2'}, function(args, speaker)
+    if PromptButtonHoldBeganV2 ~= nil then
+        PromptButtonHoldBeganV2:Disconnect()
+        PromptButtonHoldBeganV2 = nil
+    end
+
+    PromptButtonHoldBeganV2 = game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(cb)
+        cb.HoldDuration = 0
+    end)
+    
+    notify("Instant Prompts V2", "Enabled")
+end)
+
+addcmd('uninstantproximityprompts', {'uninstantpp'}, function(args, speaker)
+    if PromptButtonHoldBeganV2 ~= nil then
+        PromptButtonHoldBeganV2:Disconnect()
+        PromptButtonHoldBeganV2 = nil
+    end
+    
+    if PromptButtonHoldBegan ~= nil then
+        PromptButtonHoldBegan:Disconnect()
+        PromptButtonHoldBegan = nil
+    end
+
+    notify("Instant Prompts", "All versions disabled")
 end)
 
 addcmd('notifyping',{'ping'},function(args, speaker)
