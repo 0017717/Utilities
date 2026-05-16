@@ -125,7 +125,7 @@ if makefolder and isfolder and writefile and isfile then
     end)
 end
 
-currentVersion = "1.0.0a"
+currentVersion = "0.0.0.1"
 
 ScaledHolder = Instance.new("Frame")
 Scale = Instance.new("UIScale")
@@ -323,7 +323,7 @@ Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 250, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
-Title.Text = "MIY v" .. currentVersion
+Title.Text = "17's IY | " .. currentVersion
 
 do
 	local emoji = ({
@@ -10339,8 +10339,6 @@ addcmd('olddex', {'odex'}, function(args, speaker)
 
 	local function Load(Obj, Url)
 		local function GiveOwnGlobals(Func, Script)
-			-- Fix for this edit of dex being poorly made
-			-- I (Alex) would like to commemorate whoever added this dex in somehow finding the worst dex to ever exist
 			local Fenv, RealFenv, FenvMt = {}, {
 				script = Script,
 				getupvalue = function(a, b)
@@ -10402,8 +10400,6 @@ end)
 
 addcmd('remotespy',{'rspy'},function(args, speaker)
 	notify("Loading",'Hold on a sec')
-	-- Full credit to exx, creator of SimpleSpy
-	-- also thanks to Amity for fixing
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
 end)
 
@@ -10414,6 +10410,7 @@ end)
 
 addcmd("nogameplaypaused", {"ngp"}, function(args, speaker)
     game:GetService("CoreGui").RobloxGui["CoreScripts/NetworkPause"]:Destroy()
+	notify("Notification",'No gameplay paused enabled')
 end)
 
 local loopgoto = nil
@@ -12999,10 +12996,6 @@ task.spawn(function()
 	end)
 
 	if success then
-		if currentVersion ~= latestVersionInfo.Version then
-			notify("Outdated", "Get the new version at infyiff.github.io")
-		end
-
 		if latestVersionInfo.Announcement and latestVersionInfo.Announcement ~= "" then
 			local AnnGUI = Instance.new("Frame")
 			local background = Instance.new("Frame")
