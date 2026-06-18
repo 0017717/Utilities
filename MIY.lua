@@ -4403,13 +4403,13 @@ CMDs[#CMDs + 1] = {NAME = 'discord / support / help', DESC = 'Invite to the Infi
 CMDs[#CMDs + 1] = {NAME = 'guiscale [number]', DESC = 'Changes the size of the gui. [number] accepts both decimals and whole numbers. Min is 0.4 and Max is 2'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'oldconsole', DESC = 'Loads old Roblox console'}
-CMDs[#CMDs + 1] = {NAME = 'v2dex / vdex', DESC = 'Opens Dex++'}
 CMDs[#CMDs + 1] = {NAME = 'vscode / vs', DESC = 'Opens VScode'}
 CMDs[#CMDs + 1] = {NAME = 'cobalt', DESC = 'Opens Cobalt Remote Spy'}
 CMDs[#CMDs + 1] = {NAME = 'utopia', DESC = 'Opens Utopia Remote Spy'}
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'olddex / odex', DESC = 'Opens Old DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'v2dex / dexv2', DESC = 'Opens DEX++'}
+CMDs[#CMDs + 1] = {NAME = 'v3dex / vex', DESC = 'Opens VEX Explorer by vez'}
 CMDs[#CMDs + 1] = {NAME = 'remotespy / rspy', DESC = 'Opens Simple Spy V3'}
 CMDs[#CMDs + 1] = {NAME = 'audiologger / alogger', DESC = 'Opens Edges audio logger'}
 CMDs[#CMDs + 1] = {NAME = 'serverinfo / info', DESC = 'Gives you info about the server'}
@@ -10295,10 +10295,6 @@ addcmd('oldconsole',{},function(args, speaker)
 	notify('Console','Press F9 to open the console')
 end)
 
-addcmd("v2dex", {"vdex"}, function(args, speaker)
-    loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))()
-end)
-
 addcmd("cobalt", {}, function(args, speaker)
     loadstring(game:HttpGet("https://github.com/notpoiu/cobalt/releases/latest/download/Cobalt.luau"))()
 end)
@@ -10318,6 +10314,10 @@ end)
 
 addcmd("v2dex", {"dexv2"}, function(args, speaker)
     loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))()
+end)
+
+addcmd("v3dex", {"vex"}, function(args, speaker)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vezise/2026/main/Vez/VexExplorer/VEXExplorer.lua"))()
 end)
 
 addcmd('olddex', {'odex'}, function(args, speaker)
