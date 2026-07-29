@@ -10296,7 +10296,7 @@ addcmd('oldconsole',{},function(args, speaker)
 end)
 
 addcmd("cobalt", {}, function(args, speaker)
-    loadstring(game:HttpGet("https://github.com/notpoiu/cobalt/releases/latest/download/Cobalt.luau"))()
+    loadstring(game:HttpGet("https://gitlab.com/upio/cobalt/-/releases/permalink/latest/downloads/Cobalt.luau"))()
 end)
 
 addcmd("utopia", {}, function(args, speaker)
