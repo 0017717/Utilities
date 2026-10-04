@@ -4669,6 +4669,7 @@ CMDs[#CMDs + 1] = {NAME = 'headsize [player] [size]', DESC = 'Expands the head s
 CMDs[#CMDs + 1] = {NAME = '', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = 'reset', DESC = 'Resets your character normally'}
 CMDs[#CMDs + 1] = {NAME = 'respawn', DESC = 'Respawns you'}
+CMDs[#CMDs + 1] = {NAME = 'bj', DESC = 'breakjoints..what else u sus'}
 CMDs[#CMDs + 1] = {NAME = 'refresh / re', DESC = 'Respawns and brings you back to the same position'}
 CMDs[#CMDs + 1] = {NAME = 'god', DESC = 'Makes your character difficult to kill in most games'}
 CMDs[#CMDs + 1] = {NAME = 'permadeath', DESC = 'Makes you unable to die'}
@@ -9284,6 +9285,21 @@ end)
 
 addcmd("respawn", {}, function(args, speaker)
     respawn(speaker)
+end)
+
+addcmd('bj', {'breakjoints'}, 'Breaks the joints of the local player', function(args, speaker)
+    local char = speaker.Character or Players.LocalPlayer.Character
+    if char then
+        char:BreakJoints()
+
+        local head = char:FindFirstChild("Head")
+        if head then
+            local neck = head:FindFirstChild("Neck")
+            if neck then
+                neck:Destroy()
+            end
+        end
+    end
 end)
 
 addcmd("refresh", {"re"}, function(args, speaker)
